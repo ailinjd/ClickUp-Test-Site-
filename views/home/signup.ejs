@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<!--TRULIOO SCRIPT INSERT START-->    
+<script type="text/javascript" src="https://js.trulioo.com/latest/main.js"></script>
+
+
+<!-- Initialize your form here with your Frontend (FE) key -->
+<script> 
+    // Handle the response of EmbedID after form submits
+    function handleResponse(e) { 
+      console.log('handleResponse', e); 
+    }     
+    const publicKey = '433137b35d0c49dbbbd2c649886ccfa3'; // Public Key
+    const accessTokenURL = 'http://localhost:3000';
+    new TruliooClient({ 
+      publicKey, 
+      accessTokenURL,
+      handleResponse 
+    });
+  </script>
+
+  <!--TRULIOO SCRIPT INSERT END-->    
+
+
+    <!-- Webpage Title -->
+    <title>ClickUp Demo Site</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/css/swiper.css" rel="stylesheet">
+	<link href="/css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="https://pbs.twimg.com/profile_images/1100500130791346176/mreCj02H_400x400.png">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
+        <div class="container">
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/testsite"><img src="/images/clickup.png" alt="alternative"></a> 
+
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/testsite">Home</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="/signup">Retest (Sign Up)</a>
+                    </li>
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+        <!-- Header -->
+        <header id="header" class="headerEmbed">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h1 class="h1-largeEmbed">ClickUp<br>Demo Site</h1>
+                        <a class="buttongetresults" href="#results" >Get the Verification Result</a>
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6">
+                            <div class="center">
+
+                                <div class="progress">
+                                    <div class="color">
+                                        <br>
+                                    </div>
+                                  </div>
+
+ <!--TRULIOO DIV INITIATION--> <div id="trulioo-embedid"></div>  <!--TRULIOO DIV INITIATION--->
+
+                             <!-- end of col -->
+                        </div> <!-- end of button-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </header> <!-- end of header -->
+        <!-- end of header -->
+      
+    
+    <!-- SignUp Start -->
+    <div id="results" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="getstarted">
+                    <h1>How to View the Overall Verification Results</h1>
+                    <br><br><br>
+    
+                        <h3>Follow these 2 simple steps:</h3>
+    
+                        <div class="float-container1results">
+    
+                            <div class="float-child1results">
+                              <div class="startedtest">
+                                <ul>
+                                    <br>
+                                    <li>
+                                        <strong>Step 1:</strong><br>
+                                         When an end user (i.e. your customer) verifies themselves through EmbedID, an Experience Transaction ID is output to the handleResponse
+                                         callback. You can use this Experience Transaction ID to get both the data that was entered by the user, as well as their verification 
+                                         result for every part of the verification that took place. You can get the Experience Transaction ID by clicking by <strong>Inspecting Element</strong>
+                                          -> <strong>Console</strong> -> Expand <strong>HandleResponse > Object</strong> like so:
+                                        <br><br>
+                                         <strong>Note:</strong> The handleResponse Callback should also pass the Experience Transaction ID to your backend (once you have fully intergrated on your
+                                          own website) so you can securely make the below API call.
+                                         
+                                        </li>
+                                </ul>
+                              </div>
+                            </div>
+                            
+                            <div class="float-child1results">
+                              <div class="startedimageresults">
+    
+                                <img src="/images/HandleResponse.png" class="configimages" alt="App Config">
+    
+                              </div>
+                            </div>
+                            
+                          </div>
+    
+                          <br>
+    
+                          <div class="float-container2results">
+    
+                            <div class="float-child2results">
+                              <div class="startedtest">
+                                <ul>
+                                    <br><br><br>
+    
+                                    <li>
+                                        <strong>Step 2:</strong><br>
+                                        You can now call the following endpoint (substituting in the "Experience Transaction ID" from the previous step)
+                                        to get a simple overview of the results of the verification. You can also get a more detailed
+                                         result by appending "/detailedResult" to the get URL. </li>
+                                </ul>
+                              </div>
+                            </div>
+                            
+                            <div class="float-child2results">
+                              <div class="startedimageresults2">
+                                <br>
+                                <div class="codediv">
+                                    <p class="codedivp p"><code class =code>
+                                        Curl -X GET <br>
+                                        https://gateway.trulioo.com/experienceTransaction/{experienceTransactionId} <br>
+                                        -H 'cache-control: no-cache' <br>
+                                        -H 'content-type: application/json' <br>
+                                        -H 'x-trulioo-api-key: YOUR_API_KEY_(BE)_GOES_HERE' <br>
+                                    </code></p>
+                                </div>
+                                <br><br><br>
+                              </div>
+                            </div>                          
+                          </div>
+    
+                    </div> <!-- end of getstarted -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-1 -->
+        <!-- end of SignUp  -->
+
+    
+      <!-- Footer -->
+      <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-col first">
+                        <h6>About Trulioo EmbedID</h6>
+                        <p class="p-small">EmbedID is a low code front end tool that allows you to quickly add Identity Verification and ID Document Verification to your digital onboarding process.</p>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col second">
+                        <h6>Links</h6>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li>Documentation: <a href="https://gateway-admin.trulioo.com/documentation/embedid">EmbedID</a>
+                            <li>Links: <a href="https://www.trulioo.com/">Trulioo Website</a>
+                        </ul>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col third">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+
+                    </div> <!-- end of footer-col -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Created by: Alan Buckley (Solutions Engineer @ Trulioo)</p>
+                </div> 
+                
+                <div class="col-lg-12">
+                    <p class="p-small">Distributed by :<a href="https://www.trulioo.com/">Trulioo</a></p>
+                </div> <<!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    	
+    <!-- Scripts -->
+    <script src="/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

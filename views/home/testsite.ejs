@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <!-- Webpage Title -->
+    <title>ClickUp Demo Site</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/css/swiper.css" rel="stylesheet">
+	<link href="/css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="https://pbs.twimg.com/profile_images/1100500130791346176/mreCj02H_400x400.png">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
+        <div class="container">
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/testsite"><img src="/images/clickup.png" alt="alternative"></a> 
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Elma</a> -->
+
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#header">Home</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="/signup">ClickUp Demo Site</a>
+                    </li>
+                    
+
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+      
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="h1-large"><br>ClickUp Demo<br>Site</h1>
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="button-container">
+                        <a class="buttongetstarted" href="#intro" >Get Started</a>
+
+
+                        <!--<a class="btn-outline-lg page-scroll" href="#contact">Contact</a>-->
+                    </div> <!-- end of button-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- Introduction -->
+    <div id="intro" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="getstarted">
+                    <h1>Get Started</h1>
+                    <br>
+                    <p>Welcome to the Trulioo EmbedID Testing Site. On this site you can test a full EmbedID Sign Up workflow in order
+                        to see exactly what your own customer Sign Up experience will look when you implement EmbedID on your own website. 
+                        This site allows you to: </p>
+                    <br>
+                    <p>
+                        <ul>
+                            <li>View the Sign Up Experience that you created within the Trulioo Developer Portal. </li>
+                            <li>Make Backend API calls from your NodeJS server to Trulioo in order to make real verifications.</li>
+                            <li>Cuts down on your own developer testing resources and may limit the need for a full POC. </li>
+                        </ul>
+                    </p>
+                    <br><br><br>
+
+                    <h3>Preliminary Configuration Checks:</h3>
+
+                    <div class="float-container1">
+
+                        <div class="float-child1">
+                          <div class="startedtest">
+                            <ul>
+                                <br>
+                                <li> 
+                                <strong>Step 1:</strong><br>
+                                Since your are using a Node js in your backend in order to run this Website, Trulioo has built a middleware package
+                                <strong>(trulioo-middleware SDK)</strong> that you can use to generate an Access Token securely from your backend. This will validate the form you
+                                 place in your frontend is making requests on your behalf. The code has already been pasted in. All you need to do is input 
+                                 your <strong>API Key</strong> from your Experience into the "app.js" configuration file on line 25 like so:
+                                 </li>
+                            </ul>
+                          </div>
+                        </div>
+                    
+                        <div class="float-child1">
+                          <div class="startedimage">
+                            <img src="/images/appjsconfig.png" class="configimages" alt="App Config">
+                        
+                            <p class=fileclass>File: "app.js"</p>
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                      <br>
+
+                      <div class="float-container2">
+
+                        <div class="float-child2">
+                          <div class="startedtest">
+                            <ul>
+                                <br><br><br>
+
+                                <li>
+                                <strong>Step 2:</strong><br>
+                                 Once your server is running, you can then add your client side code to embed your Experience in your frontend/website.
+                                 The Trulioo script has already been pasted in (from lines 10 to 23) in the "signup.ejs" file, all you need to do now is 
+                                 input your <strong>Public Key</strong> from your Experience on line 16 like so: </li>
+                                 <br>
+                                 <strong>Note:</strong> The Trulioo DIV has been initiated on line 83 ("id="trulioo-embedid">"). This is where the Sign Up form
+                                 will appear.
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <div class="float-child2">
+                          <div class="startedimage2">
+                            <br>
+                            <img src="/images/htmlconfig.png" class="configimages" alt="App Config">
+                            <p class=fileclass>File: "signup.ejs"</p>
+                            
+                          </div>
+                        </div>
+
+                        <div class=introend>
+                            
+                            <p>Once the above Preliminary Checks have been preformed and your Node js Server has been restarted, then go ahead and 
+                            <strong>Test Your Customer Experience (Sign Up).</strong>
+                             </p>    
+
+                        </div>
+
+
+                        
+                      </div>
+
+
+                    
+
+
+                </div> <!-- end of getstarted -->
+                <!-- 
+				<div class="col-lg-6">
+                    <div class="text-container">
+                        <p><strong>Planing</strong> led ask possible mistress relation elegance eat likewise debatin. By message or am nothing amongst chiefly address of research</p>
+                        <p><strong>Designing</strong> the its enable direct men depend highly. Ham windows sixte who inquiry fortune demands. Is be force upon and of course</p>
+                        <p><strong>Development</strong> sang fond must shew. Really boy law county she unable her sister. Feet you off its. Among are leave law built now</p>
+                    </div> <!-- end of text-container 
+				--> 
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of introduction -->
+
+
+
+
+
+   
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-col first">
+                        <h6>About Trulioo EmbedID</h6>
+                        <p class="p-small">EmbedID is a low code front end tool that allows you to quickly add Identity Verification and ID Document Verification to your digital onboarding process.</p>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col second">
+                        <h6>Links</h6>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li>Documentation: <a href="https://gateway-admin.trulioo.com/documentation/embedid">EmbedID</a>
+                            <li>Links: <a href="https://www.trulioo.com/">Trulioo Website</a>
+                        </ul>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col third">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+
+                    </div> <!-- end of footer-col -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Created by: Alan Buckley (Solutions Engineer @ Trulioo)</p>
+                </div> 
+                
+                <div class="col-lg-12">
+                    <p class="p-small">Distributed by :<a href="https://www.trulioo.com/">Trulioo</a></p>
+                </div> <<!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    	
+    <!-- Scripts -->
+    <script src="/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
+
